@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For My Love ❤️</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+:root {
+    --pink: #f5a9c7;
+    --light-pink: #ffe2ec;
+    --gold: #f5d5a9;
+    --paper: #fff5e9;
+    --ink: #553747;
+    --bg: #10070d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--bg);
+    color: #fff0f5;
+    font-family: 'Playfair Display', Georgia, serif;
+    overflow-x: hidden;
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background:
+        radial-gradient(1px 1px at 20% 30%, #fff, transparent),
+        radial-gradient(2px 2px at 70% 60%, #f5a9c7, transparent),
+        radial-gradient(1px 1px at 90% 20%, #fff, transparent),
+        radial-gradient(2px 2px at 40% 80%, #f5a9c7, transparent),
+        radial-gradient(ellipse at top, #48182f, transparent 70%),
+        linear-gradient(145deg, #10070d, #200b18);
+    background-size: 100px 100px, 130px 130px,
+                     170px 170px, 140px 140px, auto, auto;
+}
+
+/* BUTTONS */
+.btn {
+    border: 1px solid #e9a0bc;
+    border-radius: 40px;
+    background: linear-gradient(135deg, #7c2b4c, #4b1730);
+    color: white;
+    padding: 14px 25px;
+    margin: 8px 4px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px #e477a540;
+}
+
+.eyebrow {
+    font-family: Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 10px;
+    line-height: 2;
+    color: var(--gold);
+}
+
+.pink {
+    color: var(--pink);
+}
+
+.subtitle {
+    color: #dec6d2;
+    font: 14px/1.9 Arial, sans-serif;
+}
+
+.heart {
+    color: var(--pink);
+    font-size: 30px;
+    margin: 20px 0;
+    animation: heartbeat 1.7s infinite;
+}
+
+@keyframes heartbeat {
+    50% { transform: scale(1.15); }
+}
+
+/* WELCOME POPUP */
+.popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100000;
+    transition: opacity 0.8s ease;
+}
+
+.popup-content {
+    text-align: center;
+    padding: 45px 35px;
+    background: #1b0b14e8;
+    border: 1px solid #a34b6d80;
+    border-radius: 28px;
+    box-shadow: 0 20px 80px #0008;
+    max-width: 90%;
+    width: 400px;
+}
+
+.popup-content h2 {
+    font-size: 26px;
+    font-weight: 400;
+    margin: 15px 0 25px;
+    color: #ffe0eb;
+}
+
+.popup-overlay.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* COUNTDOWN */
+.screen {
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 22px;
+    text-align: center;
+}
+
+.countdown-card {
+    width: 100%;
+    max-width: 750px;
+    padding: clamp(30px, 6vw, 55px) 20px;
+    border: 1px solid #a34b6d80;
+    border-radius: 28px;
+    background: #1b0b14e8;
+    box-shadow: 0 20px 80px #0008;
+}
+
+.countdown-card h1 {
+    font-size: clamp(43px, 9vw, 78px);
+    font-weight: 400;
+    line-height: 1.12;
+    margin: 22px 0;
+}
+
+.timer {
+    display: flex;
+    justify-content: center;
+    gap: clamp(12px, 4vw, 30px);
+    margin: 35px 0;
+}
+
+.time-box span {
+    display: block;
+    font: clamp(28px, 6vw, 47px) Arial, sans-serif;
+    font-variant-numeric: tabular-nums;
+}
+
+.time-box small {
+    display: block;
+    font: 9px Arial, sans-serif;
+    letter-spacing: 2px;
+    color: var(--pink);
+    margin-top: 10px;
+}
+
+.note {
+    max-width: 430px;
+    margin: 18px auto 0;
+    color: #bda2b0;
+    font: 12px/1.8 Arial, sans-serif;
+}
+
+/* HERO */
+.hero {
+    min-height: 94vh;
+    min-height: 94svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 9vw, 80px);
+    line-height: 1.15;
+    font-weight: 400;
+    margin: 25px 0;
+}
+
+.hero .subtitle {
+    max-width: 530px;
+}
+
+.heart-seal {
+    width: 88px;
+    height: 88px;
+    display: grid;
+    place-items: center;
+    border: 1px solid #d985a4;
+    border-radius: 50%;
+    color: var(--pink);
+    font-size: 40px;
+    margin-bottom: 24px;
+    box-shadow: 0 0 40px #d64c8128;
+}
+
+/* SCRAPBOOK INTRO */
+.section-heading {
+    text-align: center;
+    padding: 75px 20px 35px;
+}
+
+.section-heading h2 {
+    font-size: clamp(35px, 7vw, 58px);
+    font-weight: 400;
+    line-height: 1.25;
+    margin: 15px 0;
+}
+
+.section-heading p {
+    font: 13px/1.9 Arial, sans-serif;
+    color: #d6b8c7;
+}
+
+.handwritten {
+    font-family: 'Caveat', cursive;
+    font-size: 25px;
+    color: var(--pink);
+}
+
+/* SCRAPBOOK GALLERY */
+.scrapbook {
+    width: min(1080px, 92%);
+    margin: 10px auto 80px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 75px 55px;
+    align-items: start;
+}
+
+.memory {
+    position: relative;
+    min-width: 0;
+    padding: 13px 13px 20px;
+    background: var(--paper);
+    color: var(--ink);
+    border-radius: 3px;
+    box-shadow:
+        0 15px 35px #0008,
+        0 2px 5px #0003;
+    transform: rotate(-2deg);
+    transition:
+        transform 0.5s ease,
+        box-shadow 0.5s ease;
+}
+
+.memory:nth-child(even) {
+    transform: rotate(2.5deg);
+    margin-top: 45px;
+}
+
+.memory:nth-child(3n) {
+    transform: rotate(1.5deg);
+}
+
+.memory:nth-child(4n) {
+    transform: rotate(-3deg);
+    margin-top: 15px;
+}
+
+.memory:hover {
+    transform: rotate(0deg) translateY(-7px) !important;
+    box-shadow: 0 24px 50px #0009;
+    z-index: 2;
+}
+
+.tape {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-4deg);
+    width: 83px;
+    height: 25px;
+    background: #eeb5c6cf;
+    z-index: 2;
+    opacity: 0.9;
+    box-shadow: 0 2px 5px #0001;
+}
+
+.memory:nth-child(even) .tape {
+    transform: translateX(-50%) rotate(5deg);
+    background: #e8cf9ecf;
+}
+
+.memory-photo {
+    width: 100%;
+    height: 320px;
+    background: #e6d7d6;
+    overflow: hidden;
+}
+
+.memory-photo img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.memory:hover .memory-photo img {
+    transform: scale(1.045);
+}
+
+.memory-content {
+    padding: 17px 8px 4px;
+}
+
+.memory-number {
+    font: 11px Arial, sans-serif;
+    letter-spacing: 2px;
+    color: #a17a8b;
+}
+
+.memory h3 {
+    font: 600 29px/1.2 'Caveat', cursive;
+    color: #713b52;
+    margin: 8px 0 10px;
+}
+
+.memory p {
+    font: 14px/1.85 Arial, sans-serif;
+    color: #694f5b;
+}
+
+.memory .tiny-heart {
+    text-align: right;
+    color: #c56d8f;
+    font-size: 21px;
+    margin-top: 8px;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.memory.reveal.visible {
+    transform: rotate(-2deg);
+}
+
+.memory:nth-child(even).reveal.visible {
+    transform: rotate(2.5deg);
+}
+
+.memory:nth-child(3n).reveal.visible {
+    transform: rotate(1.5deg);
+}
+
+.memory:nth-child(4n).reveal.visible {
+    transform: rotate(-3deg);
+}
+
+/* LETTER */
+.letter {
+    width: min(800px, 92%);
+    margin: 85px auto;
+    padding: clamp(25px, 6vw, 55px);
+    background: linear-gradient(145deg, #29111d, #160a10);
+    border: 1px solid #a94f706b;
+    border-radius: 24px;
+    box-shadow: 0 20px 70px #0005;
+}
+
+.letter h2 {
+    font-size: clamp(34px, 6vw, 49px);
+    text-align: center;
+    font-weight: 400;
+    color: #ffe0eb;
+    margin: 18px 0 32px;
+}
+
+.letter p {
+    font: 15px/2 Arial, sans-serif;
+    color: #f0dce4;
+    margin: 20px 0;
+}
+
+.signature {
+    text-align: center;
+    font: 27px/1.6 'Caveat', cursive !important;
+    color: var(--pink) !important;
+    margin-top: 35px !important;
+}
+
+/* ENDING */
+.ending {
+    min-height: 70vh;
+    min-height: 70svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 55px 20px;
+    text-align: center;
+}
+
+.ending h2 {
+    font-size: clamp(40px, 8vw, 70px);
+    line-height: 1.25;
+    font-weight: 400;
+    margin: 20px 0;
+}
+
+.ending p {
+    font: 14px/2 Arial, sans-serif;
+    color: #d7b9c6;
+}
+
+footer {
+    padding: 25px 15px;
+    text-align: center;
+    color: #9d7c8b;
+    font: 10px/2 Arial, sans-serif;
+    letter-spacing: 2px;
+}
+
+/* FLOATING HEARTS */
+.floating-heart {
+    position: fixed;
+    bottom: -30px;
+    z-index: 10;
+    pointer-events: none;
+    color: var(--pink);
+    animation: floatUp 7s linear forwards;
+}
+
+@keyframes floatUp {
+    to {
+        transform: translateY(-110vh) rotate(35deg);
+        opacity: 0;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 650px) {
+    .scrapbook {
+        grid-template-columns: 1fr;
+        width: min(410px, 90%);
+        gap: 48px;
+    }
+
+    .memory,
+    .memory:nth-child(even),
+    .memory:nth-child(3n),
+    .memory:nth-child(4n) {
+        margin-top: 0;
+    }
+
+    .memory-photo {
+        height: auto;
+        aspect-ratio: 4 / 5;
+    }
+
+    .memory h3 {
+        font-size: 31px;
+    }
+
+    .letter {
+        margin: 55px auto;
+    }
+
+    .timer {
+        gap: 12px;
+    }
+
+    .time-box small {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<!-- WELCOME POPUP -->
+<div id="welcomePopup" class="popup-overlay">
+    <div class="popup-content">
+        <div class="heart" style="font-size: 50px;">💌</div>
+        <h2>A Surprise Awaits...</h2>
+        <button class="btn" id="openPopupBtn" style="padding: 16px 40px; font-size: 18px;">
+            Open 🔓
+        </button>
+    </div>
+</div>
+
+<!-- SOUND BUTTON (Hidden by default, shows after popup) -->
+<button class="btn" id="tickSoundBtn" type="button" style="display:none;">
+    🔇 Pause Sound
+</button>
+
+<!-- COUNTDOWN SCREEN -->
+
+<section id="locked" class="screen">
+    <div class="countdown-card">
+
+        <div class="eyebrow">A little secret, made with love</div>
+
+        <div class="heart">♥</div>
+
+        <h1>
+            For <span class="pink">My Love</span>
+        </h1>
+
+        <p class="subtitle">
+            Someone has made something special just for you.<br>
+            Beautiful memories, a little surprise, and all my love. ❤️
+        </p>
+
+        <div class="eyebrow" style="margin-top:30px">
+            29 October 2026 · 12:00 AM
+        </div>
+
+        <div class="timer">
+            <div class="time-box">
+                <span id="days">00</span>
+                <small>DAYS</small>
+            </div>
+
+            <div class="time-box">
+                <span id="hours">00</span>
+                <small>HOURS</small>
+            </div>
+
+            <div class="time-box">
+                <span id="minutes">00</span>
+                <small>MINUTES</small>
+            </div>
+
+            <div class="time-box">
+                <span id="seconds">00</span>
+                <small>SECONDS</small>
+            </div>
+        </div>
+
+        <p id="waitline" class="subtitle">
+            Wait until the moment is right… ♡
+        </p>
+
+        <p class="note">
+            Keep this page open for the surprise. ❤️
+        </p>
+
+    </div>
+</section>
+
+<!-- BIRTHDAY SURPRISE -->
+
+<main id="birthdayPage" class="hidden">
+
+    <section class="hero">
+        <div class="heart-seal">♥</div>
+        <div class="eyebrow">29 · 10 · 2026</div>
+        <h1>Happy Birthday to<br><span class="pink">My Dear Wifey</span><br>🎂🎂🎂🎂</h1>
+        <p class="subtitle">
+            Almost seven years of memories, a thousand little feelings,
+            and one heart that still chooses you.
+            Today is all about you. ❤️
+        </p>
+
+    <!-- BIRTHDAY LETTER -->
+    <section class="letter reveal">
+        <div class="eyebrow" style="text-align:center">A letter from my heart</div>
+        <h2>To My Love, ❤️</h2>
+        <p>Happy Birthday, my love. ❤️</p>
+        <p>
+            Almost seven years… এতটা সময় তোমার সঙ্গে কাটানোর পরেও
+            তোমাকে নিয়ে আমার অনুভূতিগুলো আজও ভীষণ special।
+            আমাদের কত হাসি, কত অভিমান, কত ঝগড়া, কত সুন্দর মুহূর্ত—
+            সবকিছু মিলিয়েই তুমি আমার জীবনের সবচেয়ে সুন্দর একটা অংশ।
+        </p>
+        <p>
+            তুমি শুধু আমার ভালোবাসার মানুষ নও,
+            তুমি আমার অভ্যাস, আমার শান্তি, আমার happiness,
+            আর আমার future-এর সবচেয়ে সুন্দর স্বপ্ন।
+        </p>
+        <p>
+            আমি হয়তো সবসময় perfect হতে পারব না,
+            কিন্তু মন থেকে চাই, জীবনের প্রতিটা chapter-এ
+            তুমি আমার পাশেই থাকো।
+        </p>
+        <p>
+            তোমার প্রতিটা birthday-তে তোমার পাশে থাকতে চাই,
+            তোমার হাসির কারণ হতে চাই,
+            তোমার মন খারাপের দিনে তোমার ভরসা হতে চাই।
+            আর একদিন তোমার হাত ধরে আমাদের ছোট্ট একটা পৃথিবী
+            গড়ে তুলতে চাই। 🏡❤️💍
+        </p>
+        <p>
+            সময় বদলাবে, আমাদের বয়স বাড়বে, জীবনে অনেক কিছু বদলে যাবে।
+            কিন্তু আমার সবচেয়ে প্রিয় মানুষটা যেন সবসময় তুমিই থাকো।
+            এত বছর আমার জীবনের অংশ হওয়ার জন্য,
+            আমাকে ভালোবাসার জন্য এবং আমাদের সুন্দর journey-টার জন্য
+            thank you, my love.
+        </p>
+        <p>
+            আমার দোয়া, তোমার জীবন সুখ, শান্তি, সুস্থতা,
+            সফলতা আর অনেক সুন্দর মুহূর্তে ভরে উঠুক।
+            তোমার সব স্বপ্ন পূরণ হোক, আর তোমার মুখের হাসিটা
+            যেন কখনো হারিয়ে না যায়।
+        </p>
+        <p>
+            <strong>
+                Happy Birthday to my today, my tomorrow,
+                and the future I dream of.
+                I love you more than words can ever explain. ❤️
+            </strong>
+        </p>
+        <p class="signature">
+            Happy Birthday, My Future Wife 💍<br>
+            Forever Yours, ♡
+        </p>
+    </section>
+     <div class="heart">♥ ♥ ♥</div>
+
+        <button class="btn" onclick="
+            document.getElementById('memories').scrollIntoView({
+                behavior:'smooth'
+            })
+        ">
+            Open Our Memories ↓
+        </button>
+    </section>
+
+    <!-- SCRAPBOOK GALLERY -->
+<div class="scrapbook">
+
+    <!-- MEMORY NO. 01 -->
+    <article class="memory reveal">
+        <div class="tape"></div>
+        <div class="memory-photo"><img src="received_621161695377640_2.jpeg" alt="Baby Memory"></div>
+        <div class="memory-content">
+            <div class="memory-number">MEMORY NO. 01</div>
+            <h3>Little Angel 👼</h3>
+            <p>baba-mayer adorer ei chhoto rajkonyatai...</p>
+            <div class="tiny-heart">♥</div>
+        </div>
+    </article>
+
+    <!-- MEMORY NO. 02 -->
+    <article class="memory reveal">
+        <div class="tape"></div>
+        <div class="memory-photo"><img src="received_651509458927655_2.jpeg" alt="Toddler Memory"></div>
+        <div class="memory-content">
+            <div class="memory-number">MEMORY NO. 02</div>
+            <h3>Cute Little Steps 👣</h3>
+            <p>chhoto belar ei mishti chehara...</p>
+            <div class="tiny-heart">♡</div>
+        </div>
+    </article>
+
+    <!-- MEMORY NO. 03 -->
+    <article class="memory reveal">
+        <div class="tape"></div>
+        <div class="memory-photo"><img src="received_420758318671905_2.jpeg" alt="Childhood Memory"></div>
+        <div class="memory-content">
+            <div class="memory-number">MEMORY NO. 03</div>
+            <h3>Growing Up So Fast 🌸</h3>
+            <p>aste aste boro hoccho...</p>
+            <div class="tiny-heart">♥</div>
+        </div>
+    </article>
+
+    <!-- MEMORY NO. 04 -->
+    <article class="memory reveal">
+        <div class="tape"></div>
+        <div class="memory-photo"><img src="received_1173562506183017_2.jpeg" alt="Beach Memory"></div>
+        <div class="memory-content">
+            <div class="memory-number">MEMORY NO. 04</div>
+            <h3>Ocean of Happiness 🌊</h3>
+            <p>somudrer bishalatar majhe...</p>
+            <div class="tiny-heart">♡</div>
+        </div>
+    </article>
+
+    <!-- MEMORY NO. 05 -->
+    <article class="memory reveal">
+        <div class="tape"></div>
+        <div class="memory-photo"><img src="received_622764805286114.jpeg" alt="Teenage Memory"></div>
+        <div class="memory-content">
+            <div class="memory-number">MEMORY NO. 05</div>
+            <h3>Sweet Innocence 💖</h3>
+            <p>sada jamay tomar ei mayabi rup...</p>
+            <div class="tiny-heart">♥</div>
+        </div>
+    </article>
+
+    <!-- MEMORY NO. 06 -->
+    <article class="memory reveal">
+        <div class="tape"></div>
+        <div class="memory-photo"><img src="received_3101668289857883_2.jpeg" alt="Teenage Memory"></div>
+        <div class="memory-content">
+            <div class="memory-number">MEMORY NO. 06</div>
+            <h3>The Teenage Charm ✨</h3>
+            <p>ektu ektu kore boro হওয়া...</p>
+            <div class="tiny-heart">♥</div>
+        </div>
+    </article>
+
+    <!-- MEMORY NO. 07 -->
+    <article class="memory reveal">
+        <div class="tape"></div>
+        <div class="memory-photo"><img src="received_372483587135062.jpeg" alt="Couple Memory"></div>
+        <div class="memory-content">
+            <div class="memory-number">MEMORY NO. 07</div>
+            <h3>Together Always 💑</h3>
+            <p>tomar sathe katano protita muhurto...</p>
+            <div class="tiny-heart">♡</div>
+        </div>
+    </article>
+
+    <!-- MEMORY NO. 08 -->
+    <article class="memory reveal">
+        <div class="tape"></div>
+        <div class="memory-photo"><img src="received_882587155487855.jpeg" alt="Holding Hands"></div>
+        <div class="memory-content">
+            <div class="memory-number">MEMORY NO. 08</div>
+            <h3>Promised Forever 🤝</h3>
+            <p>tomar hata ababei sarajibon...</p>
+            <div class="tiny-heart">♥</div>
+        </div>
+    </article>
+
+    <!-- MEMORY NO. 09 -->
+    <article class="memory reveal">
+        <div class="tape"></div>
+        <div class="memory-photo"><img src="20220926040556_IMG_3720.JPG" alt="Couple Memory"></div>
+        <div class="memory-content">
+            <div class="memory-number">MEMORY NO. 09</div>
+            <h3>Perfect Match 💙</h3>
+            <p>nil sharite tomake jotota shundor...</p>
+            <div class="tiny-heart">♡</div>
+        </div>
+    </article>
+
+    <!-- MEMORY NO. 10 -->
+    <article class="memory reveal">
+        <div class="tape"></div>
+        <div class="memory-photo"><img src="Snapchat-716728308.jpg" alt="Mirror Selfie"></div>
+        <div class="memory-content">
+            <div class="memory-number">MEMORY NO. 10</div>
+            <h3>A Moment In Time 📸</h3>
+            <p>aynar samne amader ei black & white...</p>
+            <div class="tiny-heart">♥</div>
+        </div>
+    </article>
+
+</div>
+
+    <!-- ENDING -->
+    <section class="ending reveal">
+        <div class="heart">♥</div>
+        <div class="eyebrow">And our story goes on</div>
+        <h2>Our Story<br><span class="pink">Never Ends…</span></h2>
+        <p>Just one birthday page.<br>A lifetime of love still to come.</p>
+        <div style="font-size:42px; margin:25px">♾️ ❤️</div>
+        <p style="letter-spacing:3px">THE END…? NEVER.</p>
+    </section>
+
+    <footer>MADE WITH LOVE · JUST FOR YOU · 29 OCTOBER 2026</footer>
+</main>
+
+<audio id="birthdaySong" preload="auto" loop>
+    <source src="birthday-song.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Birthday Song Control -->
+<button class="btn" id="musicButton" type="button" style="display:none">
+    🎵 Turn Birthday Song Off
+</button>
+
+<style>
+    #musicButton, #tickSoundBtn {
+        position: fixed;
+        right: 18px;
+        z-index: 9999;
+        border: 1px solid #f5a9c7;
+        border-radius: 999px;
+        background: linear-gradient(135deg, #8e3158, #4b1730);
+        color: white;
+        padding: 12px 18px;
+        box-shadow: 0 8px 28px #0007;
+    }
+    #tickSoundBtn {
+        top: 18px;
+    }
+    #musicButton {
+        bottom: 18px;
+    }
+    #musicButton:hover, #tickSoundBtn:hover { transform: translateY(-2px); }
+</style>
+
+<script>
+/* =======================================
+   TARGET: 29 OCTOBER 2026, 12:00 AM
+   BANGLADESH TIME (UTC+06:00)
+======================================= */
+
+const targetDate = new Date("2026-10-29T00:00:00+06:00").getTime();
+//const targetDate = Date.now() + 11000; // 10 second er countdown (+1s extra dilam load time er jonno)
+//const targetDate = Date.now() - 1000;
+let unlocked = false;
+const birthdaySong = document.getElementById("birthdaySong");
+const musicButton = document.getElementById("musicButton");
+const tickSoundBtn = document.getElementById("tickSoundBtn");
+const welcomePopup = document.getElementById("welcomePopup");
+const openPopupBtn = document.getElementById("openPopupBtn");
+
+let musicEnabled = false;
+let isTickEnabled = false; // Will turn true when they click open
+let tickAudioContext = null;
+let lastTickSecond = null;
+let hasInteracted = false;
+
+/* Welcome Popup Button - The trick to bypass autoplay block */
+openPopupBtn.addEventListener("click", async () => {
+    // Hide popup
+    welcomePopup.classList.add("fade-out");
+    setTimeout(() => {
+        welcomePopup.style.display = "none";
+        tickSoundBtn.style.display = "block"; // Show the pause button
+    }, 800);
+
+    isTickEnabled = true;
+    
+    // Unlock audio context immediately
+    try {
+        tickAudioContext = tickAudioContext || new (window.AudioContext || window.webkitAudioContext)();
+        if (tickAudioContext.state === "suspended") await tickAudioContext.resume();
+        hasInteracted = true;
+    } catch (error) {}
+});
+
+/* Toggle Audio Button Function */
+tickSoundBtn.addEventListener("click", async (e) => {
+    e.stopPropagation(); 
+    isTickEnabled = !isTickEnabled;
+    
+    if (isTickEnabled) {
+        tickSoundBtn.textContent = "🔇 Pause Sound";
+        if (!hasInteracted) {
+            try {
+                tickAudioContext = tickAudioContext || new (window.AudioContext || window.webkitAudioContext)();
+                if (tickAudioContext.state === "suspended") await tickAudioContext.resume();
+                hasInteracted = true;
+            } catch(e) {}
+        }
+    } else {
+        tickSoundBtn.textContent = "🎵 Play Sound";
+    }
+});
+
+
+/* Gentle, romantic music box bell generated directly in browser JS */
+function playCountdownTick(second) {
+    try {
+        if (!tickAudioContext || tickAudioContext.state === "suspended" || !isTickEnabled) return; 
+        
+        const now = tickAudioContext.currentTime;
+        const oscillator = tickAudioContext.createOscillator();
+        const gain = tickAudioContext.createGain();
+        
+        oscillator.type = "sine";
+        // Alternating romantic bell pitches (C5 and E5)
+        oscillator.frequency.setValueAtTime(second % 2 === 0 ? 523.25 : 659.25, now);
+        
+        gain.gain.setValueAtTime(0, now);
+        gain.gain.linearRampToValueAtTime(0.08, now + 0.05); // Fade in softly
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.5); // Fade out like a bell
+        
+        oscillator.connect(gain);
+        gain.connect(tickAudioContext.destination);
+        
+        oscillator.start(now);
+        oscillator.stop(now + 0.6);
+    } catch (error) {}
+}
+
+/* Birthday song control */
+async function toggleBirthdayMusic() {
+    if (!birthdaySong) return;
+    if (birthdaySong.paused) {
+        try {
+            await birthdaySong.play();
+            musicEnabled = true;
+            musicButton.textContent = "🔇 Turn Birthday Song Off";
+        } catch (error) {
+            musicButton.textContent = "🎵 Tap to Play Birthday Song";
+        }
+    } else {
+        birthdaySong.pause();
+        musicEnabled = false;
+        musicButton.textContent = "🎵 Play Birthday Song";
+    }
+}
+musicButton.addEventListener("click", toggleBirthdayMusic);
+
+/* COUNTDOWN */
+function updateCountdown() {
+    const remaining = targetDate - Date.now();
+
+    if (remaining <= 0) {
+        ["days", "hours", "minutes", "seconds"].forEach(id => {
+            document.getElementById(id).textContent = "00";
+        });
+
+        unlockBirthdayPage();
+        return;
+    }
+
+    const days = Math.floor(remaining / 86400000);
+    const hours = Math.floor((remaining % 86400000) / 3600000);
+    const minutes = Math.floor((remaining % 3600000) / 60000);
+    const seconds = Math.floor((remaining % 60000) / 1000);
+    
+    // Play the generated romantic tick every second
+    if (seconds !== lastTickSecond && hasInteracted) {
+        lastTickSecond = seconds;
+        playCountdownTick(seconds);
+    }
+
+    document.getElementById("days").textContent = String(days).padStart(2, "0");
+    document.getElementById("hours").textContent = String(hours).padStart(2, "0");
+    document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
+    document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
+
+    if (remaining <= 60000) {
+        document.getElementById("waitline").textContent = "Just one more minute, my love… ❤️";
+    }
+}
+
+/* MIDNIGHT REVEAL */
+function unlockBirthdayPage() {
+    if (unlocked) return;
+
+    unlocked = true;
+
+    document.getElementById("locked").classList.add("hidden");
+    document.getElementById("birthdayPage").classList.remove("hidden");
+
+    // Remove popup if it wasn't clicked
+    if(welcomePopup) {
+        welcomePopup.style.display = "none";
+    }
+
+    // Disable the tick sound and hide the button
+    isTickEnabled = false;
+    if (tickSoundBtn) {
+        tickSoundBtn.style.display = "none";
+    }
+
+    window.scrollTo(0, 0);
+
+    setupScrollReveal();
+
+    musicButton.style.display = "block";
+    birthdaySong.play().then(() => {
+        musicEnabled = true;
+        musicButton.textContent = "🔇 Turn Birthday Song Off";
+    }).catch(() => {
+        musicButton.textContent = "🎵 Play Birthday Song";
+    });
+
+    for (let i = 0; i < 18; i++) {
+        setTimeout(createFloatingHeart, i * 250);
+    }
+}
+
+/* SMOOTH SCROLL REVEAL */
+let revealObserver;
+
+function setupScrollReveal() {
+    const elements = document.querySelectorAll(".reveal");
+
+    if (!("IntersectionObserver" in window)) {
+        elements.forEach(element => element.classList.add("visible"));
+        return;
+    }
+
+    if (revealObserver) revealObserver.disconnect();
+
+    revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.12,
+        rootMargin: "0px 0px -35px 0px"
+    });
+
+    elements.forEach(element => revealObserver.observe(element));
+}
+
+/* FLOATING HEARTS */
+function createFloatingHeart() {
+    const heart = document.createElement("div");
+    heart.className = "floating-heart";
+
+    const symbols = ["♥", "♡", "❤", "✦"];
+    heart.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (16 + Math.random() * 22) + "px";
+    heart.style.animationDuration = (5 + Math.random() * 4) + "s";
+
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 10000);
+}
+
+/* INITIALISE */
+updateCountdown();
+setInterval(updateCountdown, 250);
+
+setInterval(() => {
+    if (unlocked && Math.random() > 0.4) {
+        createFloatingHeart();
+    }
+}, 1400);
+
+</script>
+
+</body>
+</html>
